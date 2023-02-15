@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
+// #include <string.h>
 
 int main()
 {
   int random_num;
   int my_num;
+  int num_scanned;
   char *str;
 
   srand(time(0)); // seed the random number generator with the current time
@@ -15,7 +16,15 @@ int main()
   random_num = (rand() % 10) + 1;
   printf("Input your number: ");
 
-  scanf("%d", &my_num);
+  num_scanned = scanf("%d", &my_num);
+
+  while (num_scanned != 1)
+  {
+    printf("Please input a number: ");
+    while (getchar() != '\n')
+      ;
+    num_scanned = scanf("%d", &my_num);
+  }
 
   printf("My number: %d\n", my_num);
   printf("Random number: %d\n", random_num);

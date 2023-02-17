@@ -1,14 +1,26 @@
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int main () {
-  printf("hi mom\n");
+	/* need to include stdlib.h */
+	system("clear");
 
-  char *s;
+	printf("\nhi mom\n\n");
 
-  printf("input your choice: ");
-  scanf("%s", &s);
+	char my_choice[100];
+	char *rock = "rock";
 
-  printf("your choice is %s\n", &s);
+	printf("input your choice: ");
+	scanf("%s", my_choice);
+
+	printf("\nyour choice is %s\n", my_choice);
+
+	int res = strcmp(my_choice, rock);
+
+	if (res == 0)
+		printf("idiot\n\n");
+
+	return 0;
 }
-
 
